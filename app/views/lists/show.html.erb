@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center p-3">
+    <h1><%= @list.name %></h1>
+    <%= link_to 'Back to lists', lists_path, class: 'btn btn-outline-dark btn-sm' %>
+  </div>
+  <%# <div class="d-flex"> %>
+  <div class="row row-cols-2 p-3">
+    <h2>Your movies</h2>
+    <div class="col-8">
+      <div class="d-flex gap-3">
+        <% @bookmarks.each do |bookmark| %>
+          <div class="card w-50 rounded-3">
+            <img src="https://cdn.britannica.com/18/176618-050-6268BB99/David-Lean-filming-Doctor-Zhivago.jpg" class="card-img-top rounded-top" alt="...">
+              <div class="card-body">
+              <h5 class="card-title"><%= bookmark.movie.title %></h5><h5 class="fw-light text-muted"><%= bookmark.movie.rating %></h5>
+              <p class="card-text"><%= bookmark.movie.overview %></p>
+              <p class="fw-light"><%= bookmark.comment %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+      <h3>Add a movie</h3>
+      <%= render 'bookmarks/form', bookmark: @bookmark %>
+    </div>
+  </div>
+</div>
