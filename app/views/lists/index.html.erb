@@ -1,13 +1,21 @@
+<div class="banner w-100 shadow" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://getwallpapers.com/wallpaper/full/1/f/c/1461076-gorgerous-theater-wallpaper-backgrounds-3840x2160-photos.jpg);">
+  <div class="container d-flex justify-content-center">
+    <div class="text-light p-5 my-5">
+      <h1>All your favourite movies </h1>
+      <h2 class="opacity-50">...in one place</h2>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="d-flex justify-content-between align-items-center p-3">
-    <h1>Your lists</h1>
-    <%= link_to 'New list', new_list_path, class: 'btn btn-outline-dark btn-sm' %>
+    <h1>My lists</h1>
   </div>
   <div class="d-flex flex-wrap m-3 gap-3">
     <% @lists.each do |list| %>
-      <%= link_to list_path(list) do %>
-        <div class="card p-5">
-          <h4><%= list.name %></h4>
+      <%= link_to list_path(list), class: "text-decoration-none" do %>
+        <div class="card p-5 shadow border-0">
+          <h4 class="fw-bold text-dark"><%= list.name %></h4>
         </div>
       <% end %>
     <% end %>

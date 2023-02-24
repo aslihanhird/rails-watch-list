@@ -11,6 +11,17 @@
   </head>
 
   <body>
+   <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid d-flex justify-space-between">
+        <%= link_to lists_path, class: 'btn' do %>
+          <span class="navbar-brand mb-0 h1"><i class="fa-solid fa-film"></i></span>
+        <% end %>
+        <div>
+          <%= link_to 'My lists', lists_path, class: 'btn btn-outline-dark btn-sm' %>
+          <%= link_to 'New list', new_list_path, class: 'btn btn-outline-dark btn-sm' %>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
